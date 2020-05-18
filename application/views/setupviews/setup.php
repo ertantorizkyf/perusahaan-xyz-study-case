@@ -12,6 +12,8 @@
             <br>
             <a href="<?php echo base_url();?>setup/create_admin">2. Create admin user</a>
             <br>
+            <a href="<?php echo base_url();?>setup/create_team_table">3. Create team table</a>
+            <br>
         </div>
     </body>
 </html>

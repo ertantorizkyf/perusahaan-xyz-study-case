@@ -75,5 +75,51 @@ class Setup extends CI_Controller {
         echo $this->session->set_flashdata('msg','Fail to create admin');
         redirect('setup');
     }
+
+    function create_team_table(){
+        $fields = array(
+        'id' => array(
+            'type' => 'INT',
+            'unsigned' => TRUE,
+            'auto_increment' => TRUE
+        ),
+        'name' => array(
+            'type' =>'VARCHAR',
+            'constraint' => '255'
+        ),
+        'logo' => array(
+            'type' =>'VARCHAR',
+            'constraint' => '255'
+        ),
+        'year_founded' => array(
+            'type' =>'VARCHAR',
+            'constraint' => '4'
+        ),
+        'address' => array(
+            'type' =>'VARCHAR',
+            'constraint' => '255'
+        ),
+        'city' => array(
+            'type' =>'VARCHAR',
+            'constraint' => '255'
+        ),
+        'created_at' => array(
+            'type' => 'DATETIME'
+        ),
+        'updated_at' => array(
+            'type' => 'DATETIME',
+            'null' => TRUE
+        ),
+        'deleted_at' => array(
+            'type' => 'DATETIME',
+            'null' => TRUE
+        ),
+        );
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->add_field($fields);
+        $this->dbforge->create_table('team_tbl');
+        echo $this->session->set_flashdata('msg','Team table created');
+        redirect('setup');
+    }
 }
 ?>
