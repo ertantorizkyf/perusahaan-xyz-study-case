@@ -521,3 +521,10 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+/*
+  CUSTOM CONFIG ITEM
+*/
+//GET CURRENT TIME AND GET CURRENT DAY
+$now = new DateTime();
+$now->setTimezone(new DateTimeZone('Asia/Jakarta'));
+$config['now'] = $now->format('Y-m-d H:i:s');
