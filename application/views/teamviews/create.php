@@ -10,7 +10,7 @@
             </div>            
             <div class="form-group">
                 <label for="year_founded">Tahun Berdiri</label>
-                <input type="text" name="year_founded" id="year_founded" class="form-control" required>
+                <input type="number" name="year_founded" id="year_founded" class="form-control" min="1900" max="2099" step="1" required>
             </div>
             <div class="form-group">
                 <label for="address">Alamat Markas Tim</label>
