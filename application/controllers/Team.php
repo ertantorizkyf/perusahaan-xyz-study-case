@@ -7,7 +7,9 @@ class Team extends CI_Controller {
         parent::__construct();
         if(empty($this->session->userdata('id'))){
 			redirect('login');
-		}
+        }
+        $session_data = array('navigation' => 'team');
+        $this->session->set_userdata($session_data);
         $this->load->model('team_model');
     }
 

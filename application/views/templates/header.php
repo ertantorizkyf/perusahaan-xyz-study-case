@@ -43,7 +43,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Main -->
-            <li class="nav-item">
+            <li class="nav-item <?php if($this->session->userdata('navigation') == 'home') echo 'active'; ?>">
                 <a class="nav-link" href="<?php echo base_url();?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Halaman Utama</span></a>
@@ -58,7 +58,7 @@
             </div>
 
             <!-- Nav Item - Team Menu -->
-            <li class="nav-item">
+            <li class="nav-item <?php if($this->session->userdata('navigation') == 'team') echo 'active'; ?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-users"></i>
                 <span>Tim</span>
@@ -72,7 +72,7 @@
             </li>
 
             <!-- Nav Item - Player Menu -->
-            <li class="nav-item">
+            <li class="nav-item <?php if($this->session->userdata('navigation') == 'player') echo 'active'; ?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-user"></i>
                 <span>Pemain</span>
@@ -90,7 +90,7 @@
             </li>
 
             <!-- Nav Item - Match Menu -->
-            <li class="nav-item">
+            <li class="nav-item <?php if($this->session->userdata('navigation') == 'match') echo 'active'; ?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Jadwal Pertandingan</span>
@@ -113,7 +113,7 @@
             </div>
 
             <!-- Nav Item - Admin User Menu -->
-            <li class="nav-item">
+            <li class="nav-item <?php if($this->session->userdata('navigation') == 'user') echo 'active'; ?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-users"></i>
                 <span>Pengguna</span>

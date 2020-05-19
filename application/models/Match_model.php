@@ -36,6 +36,36 @@ class Match_model extends CI_Model{
         return $query->result()[0];
     }
 
+    public function get_upcoming_match(){
+        $this->db->select('m.id, m.match_date, m.home_team_id, m.away_team_id, ht.name as home_team,
+            at.name as away_team, ms.id as match_score_id, ms.home_score, ms.away_score');
+        $this->db->from('match_tbl m');
+        $this->db->join('team_tbl ht', 'm.home_team_id = ht.id');
+        $this->db->join('team_tbl at', 'm.away_team_id = at.id');
+        $this->db->join('match_score_tbl ms', 'm.id = ms.match_id', 'left');
+        $this->db->where('m.deleted_at', NULL);
+        $this->db->where('ms.id', NULL);
+        $this->db->order_by('m.id', 'DESC');
+        $this->db->limit(4);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function get_recent_match(){
+        $this->db->select('m.id, m.match_date, m.home_team_id, m.away_team_id, ht.name as home_team,
+            at.name as away_team, ms.id as match_score_id, ms.home_score, ms.away_score');
+        $this->db->from('match_tbl m');
+        $this->db->join('team_tbl ht', 'm.home_team_id = ht.id');
+        $this->db->join('team_tbl at', 'm.away_team_id = at.id');
+        $this->db->join('match_score_tbl ms', 'm.id = ms.match_id', 'left');
+        $this->db->where('m.deleted_at', NULL);
+        $this->db->where('ms.id <>', NULL);
+        $this->db->order_by('m.id', 'DESC');
+        $this->db->limit(4);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function insert($match){
         $this->db->insert('match_tbl', $match);
         return $this->db->affected_rows();
