@@ -7,7 +7,9 @@ class User extends CI_Controller {
         parent::__construct();
         if(empty($this->session->userdata('id'))){
 			redirect('login');
-		}
+        }
+        $session_data = array('navigation' => 'user');
+        $this->session->set_userdata($session_data);
         $this->load->model('user_model');
     }
 

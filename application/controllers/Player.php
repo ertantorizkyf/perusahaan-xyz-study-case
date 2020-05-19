@@ -7,7 +7,9 @@ class Player extends CI_Controller {
         parent::__construct();
         if(empty($this->session->userdata('id'))){
 			redirect('login');
-		}
+        }
+        $session_data = array('navigation' => 'player');
+        $this->session->set_userdata($session_data);
         $this->load->model('player_model');
         $this->load->model('player_position_model');
         $this->load->model('team_model');

@@ -7,7 +7,9 @@ class Match_score extends CI_Controller {
         parent::__construct();
         if(empty($this->session->userdata('id'))){
 			redirect('login');
-		}
+        }
+        $session_data = array('navigation' => 'match');
+        $this->session->set_userdata($session_data);
         $this->load->model('match_score_model');
         $this->load->model('player_model');
         $this->load->model('match_model');

@@ -7,12 +7,18 @@ class Home extends CI_Controller {
         parent::__construct();
         if(empty($this->session->userdata('id'))){
 			redirect('login');
-		}
+        }
+        $session_data = array('navigation' => 'home');
+        $this->session->set_userdata($session_data);
+        $this->load->model('match_model');
     }
 
     public function index(){
+        $data['upcoming_matches'] = $this->match_model->get_upcoming_match();
+        $data['recent_matches'] = $this->match_model->get_recent_match();
+
         $this->load->view('templates/header');
-        $this->load->view('homeviews/home');
+        $this->load->view('homeviews/home', $data);
         $this->load->view('templates/script_imports');
         $this->load->view('templates/footer');
     }
