@@ -68,3 +68,8 @@ $route['player/create'] = 'player/create_form';
 $route['player/list'] = 'player/list';
 $route['player/(:num)/delete'] = 'player/delete/$1';
 $route['player/(:num)/edit'] = 'player/edit_form/$1';
+// Match module
+$route['match/create'] = 'match/create_form';
+$route['match/list'] = 'match/list';
+$route['match/(:num)/delete'] = 'match/delete/$1';
+$route['match/(:num)/edit'] = 'match/edit_form/$1';
