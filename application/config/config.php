@@ -528,3 +528,5 @@ $config['proxy_ips'] = '';
 $now = new DateTime();
 $now->setTimezone(new DateTimeZone('Asia/Jakarta'));
 $config['now'] = $now->format('Y-m-d H:i:s');
+//BASE DIR
+$config['app_base_dir'] = $_SERVER['DOCUMENT_ROOT'].'/perusahaan-xyz-study-case';

@@ -66,3 +66,8 @@
     <script src="<?php echo base_url(); ?>assets/sb_admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/sb_admin/js/demo/datatables-demo.js"></script>
     
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <!-- Croppie -->
+    <script src="<?php echo base_url(); ?>assets/croppie/croppie.js"></script>

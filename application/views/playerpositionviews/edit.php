@@ -1,7 +1,9 @@
 <div class="card shadow mb-4 col-lg-6 center mx-auto">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Perbarui Data Posisi</h6>
-        <a href="<?php echo base_url(); ?>player-position/list" class="float-right"><i class="fa fa-arrow-left"></i> Kembali</a>
+        <h6 class="m-0 font-weight-bold text-primary">
+            Perbarui Data Posisi
+            <a href="<?php echo base_url(); ?>player-position/list" class="float-right"><i class="fa fa-arrow-left"></i> Kembali</a>
+        </h6>
     </div>
     <div class="card-body">
         <form action="<?php echo base_url(); ?>player_position/edit_process" method="POST">

@@ -13,7 +13,7 @@
                         <th>Tim</th>
                         <th>Pencetak (Nomor Punggung)</th>
                         <th>Posisi</th>
-                        <th>Waktu Gol</th>
+                        <th>Waktu Gol (Menit Ke-)</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -21,7 +21,7 @@
                         <th>Tim</th>
                         <th>Pencetak (Nomor Punggung)</th>
                         <th>Posisi</th>
-                        <th>Waktu Gol</th>
+                        <th>Waktu Gol (Menit Ke-)</th>
                     </tr>
                 </tfoot>
                 <tbody>
