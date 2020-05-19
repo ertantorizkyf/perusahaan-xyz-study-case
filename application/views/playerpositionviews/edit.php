@@ -1,4 +1,3 @@
-<!-- Create team card -->
 <div class="card shadow mb-4 col-lg-6 center mx-auto">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Perbarui Data Posisi</h6>
@@ -15,7 +14,9 @@
                 <input type="submit" value="Perbarui" class="btn btn-primary">
             </div>
         </form>
+        <?php if($this->session->flashdata('message') != NULL){ ?>
         <br>
         <p class="text-center"><?php echo $this->session->flashdata('message');?></p>
+        <?php } ?>
     </div>
 </div>
