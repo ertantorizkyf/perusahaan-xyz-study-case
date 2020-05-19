@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Main -->
             <li class="nav-item">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="<?php echo base_url();?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Halaman Utama</span></a>
             </li>
@@ -53,9 +53,9 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <!-- <div class="sidebar-heading">
-                Interface
-            </div> -->
+            <div class="sidebar-heading">
+                Sepak Bola
+            </div>
 
             <!-- Nav Item - Team Menu -->
             <li class="nav-item">
@@ -105,6 +105,27 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+
+            <?php if($this->session->userdata('role') == 'admin'){ ?>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Admin
+            </div>
+
+            <!-- Nav Item - Admin User Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Pengguna</span>
+                </a>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="<?php echo base_url()?>user/list">Lihat Daftar</a>
+                    <a class="collapse-item" href="<?php echo base_url()?>user/create">Tambah</a>
+                </div>
+                </div>
+            </li>
+            <?php } ?>
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

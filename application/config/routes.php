@@ -79,3 +79,8 @@ $route['match/(:num)/score'] = 'match_score/list/$1';
 // Auth controller
 $route['login'] = 'auth/login_form';
 $route['logout'] = 'auth/logout';
+// User module
+$route['user/create'] = 'user/create_form';
+$route['user/list'] = 'user/list';
+$route['user/(:num)/delete'] = 'user/delete/$1';
+$route['user/(:num)/edit'] = 'user/edit_form/$1';
