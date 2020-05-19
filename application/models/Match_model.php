@@ -27,6 +27,14 @@ class Match_model extends CI_Model{
         $query = $this->db->get();
         return $query->result()[0];
     }
+    
+    public function get_teams_by_match_id($id){
+        $this->db->select('m.home_team_id, m.away_team_id');
+        $this->db->from('match_tbl m');
+        $this->db->where('m.deleted_at', NULL);
+        $query = $this->db->get();
+        return $query->result()[0];
+    }
 
     public function insert($match){
         $this->db->insert('match_tbl', $match);

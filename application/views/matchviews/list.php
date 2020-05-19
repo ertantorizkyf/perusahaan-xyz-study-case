@@ -35,7 +35,7 @@
                             <td>
                                 <?php if(isset($match->match_score_id)){ ?>
                                     <?php echo $match->home_score.' - '.$match->away_score;?>
-                                    <a href="#">(Lihat detail)</a>
+                                    <a href="<?php echo base_url().'match/'.$match->id.'/score'; ?>">(Lihat detail)</a>
                                 <?php } else{ ?>
                                     <a href="<?php echo base_url().'match/'.$match->id.'/score/create'; ?>">Tambahkan data skor akhir</a>
                                 <?php } ?>
