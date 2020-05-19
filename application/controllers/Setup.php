@@ -121,5 +121,83 @@ class Setup extends CI_Controller {
         echo $this->session->set_flashdata('msg','Team table created');
         redirect('setup');
     }
+
+    function create_player_position_table(){
+        $fields = array(
+        'id' => array(
+            'type' => 'INT',
+            'unsigned' => TRUE,
+            'auto_increment' => TRUE
+        ),
+        'name' => array(
+            'type' => 'VARCHAR',
+            'constraint' => '255'
+        ),
+        'created_at' => array(
+            'type' => 'DATETIME'
+        ),
+        'updated_at' => array(
+            'type' => 'DATETIME',
+            'null' => TRUE
+        ),
+        'deleted_at' => array(
+            'type' => 'DATETIME',
+            'null' => TRUE
+        ),
+        );
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->add_field($fields);
+        $this->dbforge->create_table('player_position_tbl');
+        echo $this->session->set_flashdata('msg','Player position table created');
+        redirect('setup');
+    }
+
+    function create_player_table(){
+        $fields = array(
+        'id' => array(
+            'type' => 'INT',
+            'unsigned' => TRUE,
+            'auto_increment' => TRUE
+        ),
+        'name' => array(
+            'type' => 'VARCHAR',
+            'constraint' => '255'
+        ),
+        'height' => array(
+            'type' => 'FLOAT'
+        ),
+        'weight' => array(
+            'type' => 'FLOAT'
+        ),
+        'team_id' => array(
+            'type' => 'INT',
+            'unsigned' => TRUE
+        ),
+        'position_id' => array(
+            'type' => 'INT',
+            'unsigned' => TRUE
+        ),
+        'jersey_number' => array(
+            'type' => 'INT',
+            'unsigned' => TRUE
+        ),
+        'created_at' => array(
+            'type' => 'DATETIME'
+        ),
+        'updated_at' => array(
+            'type' => 'DATETIME',
+            'null' => TRUE
+        ),
+        'deleted_at' => array(
+            'type' => 'DATETIME',
+            'null' => TRUE
+        ),
+        );
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->add_field($fields);
+        $this->dbforge->create_table('player_tbl');
+        echo $this->session->set_flashdata('msg','Player table created');
+        redirect('setup');
+    }
 }
 ?>

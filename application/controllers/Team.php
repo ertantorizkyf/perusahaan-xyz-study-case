@@ -79,7 +79,7 @@ class Team extends CI_Controller {
         $team['year_founded'] = $this->input->post('year_founded');
         $team['address'] = $this->input->post('address');
         $team['city'] = $this->input->post('city');
-        $team['created_at'] = $current_time;
+        $team['updated_at'] = $current_time;
 
         $update = $this->team_model->update($id, $team);
         if($update > 0){

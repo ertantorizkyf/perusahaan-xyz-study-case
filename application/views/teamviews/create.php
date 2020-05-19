@@ -6,19 +6,23 @@
     <div class="card-body">
         <form action="<?php echo base_url(); ?>team/create_process" method="POST">
             <div class="form-group">
-                <input type="text" name="name" id="name" class="form-control" placeholder="Nama Tim">
+                <label for="name">Nama Tim</label>
+                <input type="text" name="name" id="name" class="form-control" required>
             </div>
             <div class="form-group">
-                <input type="text" name="year_founded" id="year_founded" class="form-control" placeholder="Tahun Berdiri">
+                <label for="year_founded">Tahun Berdiri</label>
+                <input type="text" name="year_founded" id="year_founded" class="form-control" required>
             </div>
             <div class="form-group">
-                <input type="text" name="address" id="address" class="form-control" placeholder="Alamat Markas Tim">
+                <label for="address">Alamat Markas Tim</label>
+                <input type="text" name="address" id="address" class="form-control" required>
             </div>
             <div class="form-group">
-                <input type="text" name="city" id="city" class="form-control" placeholder="Kota Markas Tim">
+                <label for="city">Kota Markas Tim</label>
+                <input type="text" name="city" id="city" class="form-control" required>
             </div>
             <div class="text-right">
-                <input type="submit" value="Tambah Tim" class="btn btn-primary">
+                <input type="submit" value="Tambah" class="btn btn-primary">
             </div>
         </form>
         <br>
