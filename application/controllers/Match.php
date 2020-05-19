@@ -5,7 +5,9 @@ class Match extends CI_Controller {
 
     function __construct(){
         parent::__construct();
-        $this->load->dbforge();
+        if(empty($this->session->userdata('id'))){
+			redirect('login');
+		}
         $this->load->model('match_model');
         $this->load->model('team_model');
     }
