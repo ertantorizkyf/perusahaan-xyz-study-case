@@ -199,5 +199,42 @@ class Setup extends CI_Controller {
         echo $this->session->set_flashdata('msg','Player table created');
         redirect('setup');
     }
+
+    function create_match_table(){
+        $fields = array(
+        'id' => array(
+            'type' => 'INT',
+            'unsigned' => TRUE,
+            'auto_increment' => TRUE
+        ),
+        'match_date' => array(
+            'type' => 'DATETIME'
+        ),
+        'home_team_id' => array(
+            'type' => 'INT',
+            'unsigned' => TRUE
+        ),
+        'away_team_id' => array(
+            'type' => 'INT',
+            'unsigned' => TRUE
+        ),
+        'created_at' => array(
+            'type' => 'DATETIME'
+        ),
+        'updated_at' => array(
+            'type' => 'DATETIME',
+            'null' => TRUE
+        ),
+        'deleted_at' => array(
+            'type' => 'DATETIME',
+            'null' => TRUE
+        ),
+        );
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->add_field($fields);
+        $this->dbforge->create_table('match_tbl');
+        echo $this->session->set_flashdata('msg','Match table created');
+        redirect('setup');
+    }
 }
 ?>

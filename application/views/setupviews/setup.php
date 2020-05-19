@@ -18,6 +18,8 @@
             <br>
             <a href="<?php echo base_url();?>setup/create_player_table">5. Create player table</a>
             <br>
+            <a href="<?php echo base_url();?>setup/create_match_table">6. Create match table</a>
+            <br>
         </div>
     </body>
 </html>
