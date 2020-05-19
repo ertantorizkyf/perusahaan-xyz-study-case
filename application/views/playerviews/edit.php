@@ -1,4 +1,3 @@
-<!-- Create team card -->
 <div class="card shadow mb-4 col-lg-6 center mx-auto">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Perbarui Data Pemain</h6>
@@ -7,6 +6,7 @@
     <div class="card-body">
         <form action="<?php echo base_url(); ?>player/edit_process" method="POST">
             <div class="form-group">
+                <label for="name">Nama Pemain</label>
                 <input type="hidden" name="player_id" id="player_id" value="<?php echo $player->id; ?>">
                 <input type="text" name="name" id="name" class="form-control" value="<?php echo $player->name; ?>" required>
             </div>
@@ -44,7 +44,9 @@
                 <input type="submit" value="Perbarui" class="btn btn-primary">
             </div>
         </form>
+        <?php if($this->session->flashdata('message') != NULL){ ?>
         <br>
         <p class="text-center"><?php echo $this->session->flashdata('message');?></p>
+        <?php } ?>
     </div>
 </div>
