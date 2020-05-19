@@ -5,7 +5,9 @@ class Match_score extends CI_Controller {
 
     function __construct(){
         parent::__construct();
-        $this->load->dbforge();
+        if(empty($this->session->userdata('id'))){
+			redirect('login');
+		}
         $this->load->model('match_score_model');
         $this->load->model('player_model');
         $this->load->model('match_model');

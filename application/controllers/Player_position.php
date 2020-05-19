@@ -5,7 +5,9 @@ class Player_position extends CI_Controller {
 
     function __construct(){
         parent::__construct();
-        $this->load->dbforge();
+        if(empty($this->session->userdata('id'))){
+			redirect('login');
+		}
         $this->load->model('player_position_model');
     }
 
