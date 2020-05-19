@@ -8,6 +8,7 @@
                 <thead>
                     <tr>
                         <th>Nama</th>
+                        <th>Logo</th>
                         <th>Tahun Berdiri</th>
                         <th>Alamat Markas</th>
                         <th>Kota Markas</th>
@@ -17,6 +18,7 @@
                 <tfoot>
                     <tr>
                         <th>Nama</th>
+                        <th>Logo</th>
                         <th>Tahun Berdiri</th>
                         <th>Alamat Markas</th>
                         <th>Kota Markas</th>
@@ -27,6 +29,7 @@
                     <?php foreach($teams as $team){ ?>
                         <tr>
                             <td><?php echo $team->name; ?></td>
+                            <td><img src="<?php echo base_url().'assets/team_logo/'.$team->logo; ?>" alt="Logo tidak tersedia" width="75" height="auto"></td>
                             <td><?php echo $team->year_founded; ?></td>
                             <td><?php echo $team->address; ?></td>
                             <td><?php echo $team->city; ?></td>

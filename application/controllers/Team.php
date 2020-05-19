@@ -13,6 +13,7 @@ class Team extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view('teamviews/create');
         $this->load->view('templates/script_imports');
+        $this->load->view('teamviews/module_script');
         $this->load->view('templates/footer');
     }
 
@@ -20,6 +21,7 @@ class Team extends CI_Controller {
         $current_time = $this->config->item('now');
 
         $team['name'] = $this->input->post('name');
+        $team['logo'] = $this->input->post('logo');
         $team['year_founded'] = $this->input->post('year_founded');
         $team['address'] = $this->input->post('address');
         $team['city'] = $this->input->post('city');
@@ -68,6 +70,7 @@ class Team extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view('teamviews/edit', $data);
         $this->load->view('templates/script_imports');
+        $this->load->view('teamviews/module_script');
         $this->load->view('templates/footer');
     }
 
@@ -76,6 +79,7 @@ class Team extends CI_Controller {
 
         $id = $this->input->post('team_id');
         $team['name'] = $this->input->post('name');
+        $team['logo'] = $this->input->post('logo');
         $team['year_founded'] = $this->input->post('year_founded');
         $team['address'] = $this->input->post('address');
         $team['city'] = $this->input->post('city');
@@ -90,5 +94,33 @@ class Team extends CI_Controller {
 
         redirect('team/'.$id.'/edit');
     }
+
+    public function photo_upload(){
+		if(isset($_POST["image"])){
+			$data = $_POST["image"];
+			$user_id = $this->session->userdata('id');
+	 
+			if(exif_imagetype($data)) {
+                // Generate random name
+                $name = sha1(microtime()) . ".png";
+                $path =  $this->config->item('app_base_dir')."/assets/team_logo";
+                $image_array_1 = explode(";", $data);
+                $image_array_2 = explode(",", $image_array_1[1]);
+                $data = base64_decode($image_array_2[1]);
+        
+                if(file_put_contents($path."/".$name, $data)){
+                    $response = $name;
+                } else{
+                    $response = "FAILED";
+                }
+		   	} else{
+				$response = "FAILED";
+		   	}
+		} else{
+			$response = "FAILED";
+		}
+		
+		echo $response;
+	}
 }
 ?>
