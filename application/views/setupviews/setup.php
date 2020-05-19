@@ -22,6 +22,8 @@
             <br>
             <a href="<?php echo base_url();?>setup/create_match_score_table">7. Create match score table</a>
             <br>
+            <a href="<?php echo base_url();?>setup/create_match_scorer_table">8. Create match scorer table</a>
+            <br>
         </div>
     </body>
 </html>
