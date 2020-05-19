@@ -14,6 +14,10 @@
             <br>
             <a href="<?php echo base_url();?>setup/create_team_table">3. Create team table</a>
             <br>
+            <a href="<?php echo base_url();?>setup/create_player_position_table">4. Create player position table</a>
+            <br>
+            <a href="<?php echo base_url();?>setup/create_player_table">5. Create player table</a>
+            <br>
         </div>
     </body>
 </html>
