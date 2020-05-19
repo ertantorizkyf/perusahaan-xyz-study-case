@@ -11,6 +11,7 @@
                         <th>Waktu Pertandingan</th>
                         <th>Tim Tuan Rumah</th>
                         <th>Tim Tamu</th>
+                        <th>Skor akhir</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -20,6 +21,7 @@
                         <th>Waktu Pertandingan</th>
                         <th>Tim Tuan Rumah</th>
                         <th>Tim Tamu</th>
+                        <th>Skor akhir</th>
                         <th>Aksi</th>
                     </tr>
                 </tfoot>
@@ -30,6 +32,14 @@
                             <td><?php $mt = new DateTime($match->match_date); echo $mt->format('H:i'); ?></td>
                             <td><?php echo $match->home_team; ?></td>
                             <td><?php echo $match->away_team; ?></td>
+                            <td>
+                                <?php if(isset($match->match_score_id)){ ?>
+                                    <?php echo $match->home_score.' - '.$match->away_score;?>
+                                    <a href="#">(Lihat detail)</a>
+                                <?php } else{ ?>
+                                    <a href="<?php echo base_url().'match/'.$match->id.'/score/create'; ?>">Tambahkan data skor akhir</a>
+                                <?php } ?>
+                            </td>
                             <td>                                
                                 <a href="<?php echo base_url().'match/'.$match->id.'/edit'; ?>" data-toggle="tooltip" title="Perbarui" class="mr-1">
                                     <i class="fa fa-edit"></i>
