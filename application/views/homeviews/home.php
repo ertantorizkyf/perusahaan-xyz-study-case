@@ -1,7 +1,7 @@
 <h3>Jadwal Pertandingan Mendatang</h3>
 <?php if(sizeof($upcoming_matches) > 0){ ?>
-    <?php foreach($upcoming_matches as $match){ ?>
     <div class="row">
+    <?php foreach($upcoming_matches as $match){ ?>
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
@@ -17,16 +17,16 @@
                 </div>
             </div>
         </div>
-    </div>
     <?php } ?>
+    </div>
 <?php } else{ ?>
     <p>Belum ada jadwal pertandingan mendatang</p>
 <?php } ?>
 <hr>
 <h3>Skor Pertandingan Terbaru</h3>
 <?php if(sizeof($recent_matches) > 0){ ?>
-    <?php foreach($recent_matches as $match){ ?>
     <div class="row">
+    <?php foreach($recent_matches as $match){ ?>
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
@@ -43,8 +43,8 @@
                 </div>
             </div>
         </div>
-    </div>
     <?php } ?>
+    </div>
 <?php } else{ ?>
     <p>Belum ada skor pertandingan terbaru</p>
 <?php } ?>

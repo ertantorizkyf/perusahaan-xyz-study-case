@@ -91,9 +91,9 @@ class Team extends CI_Controller {
 
         $update = $this->team_model->update($id, $team);
         if($update > 0){
-            echo $this->session->set_flashdata('message','Tim baru berhasil diperbarui');
+            echo $this->session->set_flashdata('message','Tim berhasil diperbarui');
         } else{
-            echo $this->session->set_flashdata('message','Gagal memperbarui tim baru');
+            echo $this->session->set_flashdata('message','Gagal memperbarui tim');
         }
 
         redirect('team/'.$id.'/edit');

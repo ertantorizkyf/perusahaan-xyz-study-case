@@ -68,9 +68,9 @@ class Player extends CI_Controller {
 
         $delete = $this->player_model->update($id, $team);
         if($delete > 0){
-            $message = 'Posisi pemain berhasil dihapus';
+            $message = 'Pemain berhasil dihapus';
         } else{
-            $message = 'Gagal menghapus posisi pemain, silakan coba lagi';
+            $message = 'Gagal menghapus pemain, silakan coba lagi';
         }
         
         echo '<script>
@@ -106,7 +106,7 @@ class Player extends CI_Controller {
         if(isset($existing_jersey)){
             if($existing_jersey->id != $id){
                 echo $this->session->set_flashdata('message','Nomor punggung untuk tim tersebut sudah diambil oleh pemain lain');
-                redirect('player/create');
+                redirect('player/'.$id.'/edit');
             }
         }
 

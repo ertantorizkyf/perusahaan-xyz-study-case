@@ -63,7 +63,6 @@ class Match_score extends CI_Controller {
                 } else{
                     $message = 'Gagal menambahkan skor pertandingan';
                 }
-                // $message = 'Skor pertandingan berhasil ditambahkan';
             } else{
                 $message = 'Gagal menambahkan skor pertandingan';
             }
