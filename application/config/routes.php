@@ -76,3 +76,6 @@ $route['match/(:num)/edit'] = 'match/edit_form/$1';
 // Match score module
 $route['match/(:num)/score/create'] = 'match_score/create_form/$1';
 $route['match/(:num)/score'] = 'match_score/list/$1';
+// Auth controller
+$route['login'] = 'auth/login_form';
+$route['logout'] = 'auth/logout';
