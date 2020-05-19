@@ -4,20 +4,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Match_model extends CI_Model{
 
     public function get_all(){
-        $this->db->select('m.id, m.match_date, m.home_team_id, m.away_team_id, ht.name as home_team, at.name as away_team');
+        $this->db->select('m.id, m.match_date, m.home_team_id, m.away_team_id, ht.name as home_team,
+            at.name as away_team, ms.id as match_score_id, ms.home_score, ms.away_score');
         $this->db->from('match_tbl m');
         $this->db->join('team_tbl ht', 'm.home_team_id = ht.id');
         $this->db->join('team_tbl at', 'm.away_team_id = at.id');
+        $this->db->join('match_score_tbl ms', 'm.id = ms.match_id', 'left');
         $this->db->where('m.deleted_at', NULL);
         $query = $this->db->get();
         return $query->result();
     }
 
     public function get_by_id($id){
-        $this->db->select('m.id, m.match_date, m.home_team_id, m.away_team_id, ht.name as home_team, at.name as away_team');
+        $this->db->select('m.id, m.match_date, m.home_team_id, m.away_team_id, ht.name as home_team,
+            at.name as away_team, ms.id as match_score_id, ms.home_score, ms.away_score');
         $this->db->from('match_tbl m');
         $this->db->join('team_tbl ht', 'm.home_team_id = ht.id');
         $this->db->join('team_tbl at', 'm.away_team_id = at.id');
+        $this->db->join('match_score_tbl ms', 'm.id = ms.match_id', 'left');
         $this->db->where('m.id', $id);
         $this->db->where('m.deleted_at', NULL);
         $query = $this->db->get();
