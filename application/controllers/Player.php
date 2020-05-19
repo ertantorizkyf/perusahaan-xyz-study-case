@@ -36,6 +36,12 @@ class Player extends CI_Controller {
         $player['jersey_number'] = $this->input->post('jersey_no');
         $player['created_at'] = $current_time;
 
+        $existing_jersey = $this->player_model->get_by_team_id_and_jersey_no($player['team_id'], $player['jersey_number']);
+        if(isset($existing_jersey)){
+            echo $this->session->set_flashdata('message','Nomor punggung untuk tim tersebut sudah diambil oleh pemain lain');
+            redirect('player/create');
+        }
+
         $insert = $this->player_model->insert($player);
         if($insert > 0){
             echo $this->session->set_flashdata('message','Pemain berhasil ditambahkan');
@@ -95,6 +101,14 @@ class Player extends CI_Controller {
         $player['position_id'] = $this->input->post('position_id');
         $player['jersey_number'] = $this->input->post('jersey_no');
         $player['updated_at'] = $current_time;
+
+        $existing_jersey = $this->player_model->get_by_team_id_and_jersey_no($player['team_id'], $player['jersey_number']);
+        if(isset($existing_jersey)){
+            if($existing_jersey->id != $id){
+                echo $this->session->set_flashdata('message','Nomor punggung untuk tim tersebut sudah diambil oleh pemain lain');
+                redirect('player/create');
+            }
+        }
 
         $update = $this->player_model->update($id, $player);
         if($update > 0){
