@@ -58,7 +58,7 @@ class Setup extends CI_Controller {
         $current_time = $this->config->item('now');
 
         $user['name'] = "admin";
-        $user['email'] = "admin@mail.com";
+        $user['email'] = "admin@xyz-mail.com";
         $user['password'] = password_hash(sha1(md5("12345678")), PASSWORD_DEFAULT);
         $user['role'] = "admin";
         $user['created_at'] = $current_time;

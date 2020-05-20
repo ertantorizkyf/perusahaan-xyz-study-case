@@ -22,5 +22,12 @@ class Home extends CI_Controller {
         $this->load->view('templates/script_imports');
         $this->load->view('templates/footer');
     }
+
+    public function not_found(){
+        $this->load->view('templates/header');
+        $this->load->view('templates/not_found');
+        $this->load->view('templates/script_imports');
+        $this->load->view('templates/footer');
+    }
 }
 ?>
